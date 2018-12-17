@@ -1,14 +1,12 @@
 language: dart
 dist: xenial
-os:
-  - linux
 sudo: false
-# matrix:
-#   include:
-#     - name: Test
-#       env: COMMAND=test
-#     - name: Analyze
-#       env: COMMAND=analyze
+matrix:
+  include:
+    - name: Test
+      env: COMMAND=test
+    - name: Analyze
+      env: COMMAND=analyze
 # addons:
   # apt:
 #     packages:
@@ -20,8 +18,8 @@ sudo: false
     #   - libstdc++6
     #   - fonts-droid
 install: echo "installing flutter"
-# before_script:
-#   - git clone https://github.com/flutter/flutter.git
+before_script:
+  - git clone https://github.com/flutter/flutter.git
 #   - ./flutter/bin/flutter doctor
 # script:
 #   - ./flutter/bin/flutter packages get
