@@ -4,20 +4,32 @@ import 'package:flutter/services.dart';
 import 'package:burb/ui/nocontent.dart';
 
 void main() {
-  runApp(MyApp());
+  // SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+  //     statusBarColor: Colors.lightBlue,
+  //     systemNavigationBarColor: Colors.white,
+  //     systemNavigationBarDividerColor: Colors.black,
+  //     systemNavigationBarIconBrightness: Brightness.dark));
 
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: Colors.lightBlue,
-      systemNavigationBarColor: Colors.white,
-      systemNavigationBarDividerColor: Colors.black,
-      systemNavigationBarIconBrightness: Brightness.dark));
+  runApp(SampleApp());
+}
+
+class SampleApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+      body: Center(
+        child: Text('Hello World'),
+      ),
+    ));
+  }
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Blirbs',
       theme: ThemeData(
         // primarySwatch: Colors.red,
         brightness: Brightness.light,
