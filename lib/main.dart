@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -10,6 +12,12 @@ void main() {
   //     systemNavigationBarDividerColor: Colors.black,
   //     systemNavigationBarIconBrightness: Brightness.dark));
 
+  const String json =
+      '{"albumId": 1,"id": 15,  "title": "harum dicta similique quis dolore earum ex qui"}';
+  final Map<String, Object> parsedJson = jsonDecode(json); // json.decode(json);
+
+  print(parsedJson['title']);
+
   runApp(SampleApp());
 }
 
@@ -17,11 +25,19 @@ class SampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-      body: Center(
-        child: Text('Hello World'),
+      home: Scaffold(
+        appBar: AppBar(title: Text('Some Images')),
+        body: Center(child: Text('Hello World')),
+        floatingActionButton: FloatingActionButton(
+          // child: Icon(Icons.add),
+          child: Text('+'),
+          tooltip: 'Increment',
+          onPressed: () {
+            print('Button pressed');
+          },
+        ),
       ),
-    ));
+    );
   }
 }
 
