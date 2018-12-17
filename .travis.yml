@@ -54,7 +54,7 @@ script:
   # - ./flutter/bin/flutter packages get
   # - cd birb
   # - ./flutter/bin/flutter test
-  - ./flutter/bin/flutter $COMMAND
+  # - ./flutter/bin/flutter $COMMAND
 cache:
   directories:
     - $HOME/.pub-cache
