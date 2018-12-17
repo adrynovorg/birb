@@ -8,9 +8,9 @@ addons:
 install: echo "installing flutter"
 before_script:
   - git clone https://github.com/flutter/flutter.git
-  - ./fultter/bin/flutter doctor
+  - ./flutter/bin/flutter doctor
 script:
-  # - cd app
+  - cd birb
   - ../flutter/bin/flutter test
 cache:
   directories:
