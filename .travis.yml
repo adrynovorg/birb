@@ -10,7 +10,7 @@ before_script:
   - git clone https://github.com/flutter/flutter.git
   - ./flutter/bin/flutter doctor
 script:
-  - cd birb
+  # - cd birb
   - ../flutter/bin/flutter test
 cache:
   directories:
