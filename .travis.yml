@@ -1,5 +1,11 @@
 language: dart
 dist: xenial
+# matrix:
+#   include:
+#     - name: Test
+#       env: COMMAND=test
+#     - name: Analyze
+#       env: COMMAND=analyze
 # additional packages installed on the OS
 addons:
   apt:
@@ -9,9 +15,33 @@ addons:
 before_script:
   - git clone https://github.com/flutter/flutter.git
   - ./flutter/bin/flutter doctor
-script:
+# script:
   # - cd birb
-  - ./flutter/bin/flutter test
+  # - ./flutter/bin/flutter test
+  # - ./flutter/bin/flutter $COMMAND
 cache:
   directories:
     - $HOME/.pub-cache
+
+
+# language: dart
+# dist: xenial
+# matrix:
+#   include:
+#     - name: Test
+#       env: COMMAND=test
+#     - name: Analyze
+#       env: COMMAND=analyze
+# addons:
+#   apt:
+#     packages:
+#       - lib32stdc++6
+# install:
+#   - git clone https://github.com/flutter/flutter.git -b beta
+#   - ./flutter/bin/flutter doctor
+# script:
+#   - cd app
+#   - ../flutter/bin/flutter $COMMAND
+# cache:
+#   directories:
+#     - $HOME/.pub-cache
