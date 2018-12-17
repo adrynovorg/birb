@@ -6,7 +6,7 @@ import 'package:burb/ui/nocontent.dart';
 void main() {
   runApp(MyApp());
 
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.lightBlue,
       systemNavigationBarColor: Colors.white,
       systemNavigationBarDividerColor: Colors.black,
@@ -24,14 +24,14 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.white,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: MyHomePage(title: 'Birb'),
+      home: const MyHomePage(title: 'Birb'),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  const MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
 
@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         elevation: 0.0,
       ),
-      body: NoContent(),
+      body: const NoContent(),
       // floatingActionButton: FloatingActionButton(
       //   onPressed: _incrementCounter,
       //   tooltip: 'Increment',

@@ -7,15 +7,16 @@ dist: xenial
 #     - name: Analyze
 #       env: COMMAND=analyze
 # additional packages installed on the OS
-addons:
-  apt:
-    packages:
-      - lib32stdc++6
+# addons:
+#   apt:
+#     packages:
+#       - lib32stdc++6
 # install: echo "installing flutter"
 before_script:
   - git clone https://github.com/flutter/flutter.git
   - ./flutter/bin/flutter doctor
-# script:
+script:
+  - ./flutter/bin/flutter packages get
   # - cd birb
   # - ./flutter/bin/flutter test
   # - ./flutter/bin/flutter $COMMAND
