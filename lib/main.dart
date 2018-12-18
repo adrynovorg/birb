@@ -4,23 +4,13 @@ import 'package:http/http.dart' show get;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:burb/ui/nocontent.dart';
+// import 'package:burb/ui/nocontent.dart';
 import 'package:burb/models/Photo.dart';
 import 'package:burb/models/Post.dart';
 
+import 'package:burb/photos/photo_list.dart';
+
 void main() {
-  // SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-  //     statusBarColor: Colors.lightBlue,
-  //     systemNavigationBarColor: Colors.white,
-  //     systemNavigationBarDividerColor: Colors.black,
-  //     systemNavigationBarIconBrightness: Brightness.dark));
-
-  // const String json =
-  //     '{'albumId': 1,'id': 15,  'title': 'harum dicta similique quis dolore earum ex qui'}';
-  // final Map<String, Object> parsedJson = jsonDecode(json); // json.decode(json);
-
-  // print(parsedJson['title']);
-
   runApp(MyApp());
 }
 
@@ -34,42 +24,6 @@ Future<Post> fetchPost(int postId) async {
   } else {
     // If that call was not successful, throw an error.
     throw Exception('Failed to load post');
-  }
-}
-
-class SampleApp extends StatelessWidget {
-  const SampleApp({Key key, this.post}) : super(key: key);
-  final Future<Post> post;
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text('Some Images')),
-        body: Center(
-          child: FutureBuilder<Post>(
-            future: fetchPost(1),
-            builder: (context, snapshot) {
-              print(snapshot);
-              if (snapshot.hasData) {
-                return Text(snapshot.data.title);
-              } else if (snapshot.hasError) {
-                return Text('${snapshot.error}');
-              }
-              return CircularProgressIndicator();
-            },
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          // child: Icon(Icons.add),
-          child: Text('+'),
-          tooltip: 'Increment',
-          onPressed: () {
-            print('Button pressed');
-          },
-        ),
-      ),
-    );
   }
 }
 
@@ -123,12 +77,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text(widget.title),
-        ),
+        title: Center(child: Text(widget.title)),
         elevation: 0.0,
       ),
-      body: const NoContent(),
+      body: PhotoList(photos), // const NoContent(),
       // floatingActionButton: FloatingActionButton(
       //   onPressed: _incrementCounter,
       //   tooltip: 'Increment',
